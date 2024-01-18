@@ -7,6 +7,54 @@
   <link href="./src/styles.css" rel="stylesheet" />
  </head>
  <body>
+  <header>
+   <img src="./logo.svg" alt="stylized splitter logo" />
+  </header>
+
+  <main>
+   <form>
+    <fieldset>
+     <label for="bill">Bill</label>
+     <input required type="number" id="bill" name="bill" />
+    </fieldset>
+
+    <fieldset>
+     <legend>Select tip % (Required)</legend>
+     <label for="5">5%</label
+     ><input id="5" name="5" type="radio" value="0.05" />
+     <label for="10">10%</label
+     ><input id="10" name="10" type="radio" value="0.1" />
+     <label for="15">15%</label
+     ><input id="15" name="15" type="radio" value="0.15" />
+     <label for="20">20%</label
+     ><input id="20" name="20" type="radio" value="0.2" />
+     <label for="50">50%</label
+     ><input id="50" name="50" type="radio" value="0.5" />
+     <label for="custom">Custom</label
+     ><input id="custom" name="custom" type="radio" value="custom" />
+    </fieldset>
+
+    <fieldset>
+     <label for="people">Number of People</label>
+     <input type="number" id="people" name="people" />
+    </fieldset>
+   </form>
+  </main>
+
+  <footer>
+   Challenge by
+   <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+    >Frontend Mentor</a
+   >
+   <br />
+   <a href="https://github.com/RebeccaCL303/tip-calculator" target="_blank"
+    >Open source code</a
+   >
+   by
+   <a href="https://rebeccacl303.github.io/" target="_blank"
+    >Rebecca Leibowitz</a
+   >
+  </footer>
   <script src="./src/script.js"></script>
  </body>
 </html>

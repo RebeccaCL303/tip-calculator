@@ -1,0 +1,28 @@
+:root {
+ --light-accent: #27c2ae;
+ --dark-accent: #00474a;
+ --input: #f5f8f9;
+}
+
+body {
+ background-color: #c5e4e7;
+ padding: 50px;
+ font-family: monospace;
+}
+
+header img {
+ margin: auto;
+ display: block;
+}
+
+main {
+ aspect-ratio: 6 / 3;
+ width: 60vw;
+ background-color: whitesmoke;
+ margin: 5rem auto;
+ border-radius: 15px;
+}
+
+footer {
+ text-align: center;
+}
