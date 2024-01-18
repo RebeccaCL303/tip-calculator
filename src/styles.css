@@ -4,16 +4,28 @@
  --input: #f5f8f9;
 }
 
+* {
+ box-sizing: border-box;
+}
+
 body {
  background-color: #c5e4e7;
  padding: 50px;
  font-family: monospace;
 }
 
+/* header and footer */
+
 header img {
  margin: auto;
  display: block;
 }
+
+footer {
+ text-align: center;
+}
+
+/* main */
 
 main {
  aspect-ratio: 6 / 3;
@@ -21,8 +33,65 @@ main {
  background-color: whitesmoke;
  margin: 5rem auto;
  border-radius: 15px;
+ display: grid;
+ grid-template-columns: 1fr 1fr;
 }
 
-footer {
- text-align: center;
+section {
+ margin: 5%;
+ width: 85%;
+ padding: 5px;
+}
+
+/* first section and form */
+
+input[type="number"] {
+ background-color: var(--input);
+}
+
+/* second section */
+
+section:last-of-type {
+ background-color: var(--dark-accent);
+ border-radius: 8px;
+}
+
+section:last-of-type p {
+ display: flex;
+ justify-content: space-between;
+ margin: 10% auto;
+ width: 80%;
+ color: whitesmoke;
+ font-size: 1.1rem;
+ font-weight: 600;
+}
+
+section:last-of-type small {
+ font-size: 0.9rem;
+ opacity: 0.8;
+ font-weight: normal;
+}
+
+section:last-of-type .amount {
+ font-size: 1.9rem;
+ color: var(--light-accent);
+}
+
+#reset {
+ background-color: rgb(151, 255, 233);
+ color: var(--dark-accent);
+ font-size: 1.2rem;
+ transition: 200ms all ease-in-out;
+ width: 90%;
+ border: none;
+ padding: 8px 0;
+ border-radius: 8px;
+ letter-spacing: 0.5px;
+ margin: 45% auto 0;
+ display: block;
+}
+
+#reset:hover {
+ cursor: pointer;
+ background-color: rgb(195, 255, 242);
 }
