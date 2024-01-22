@@ -15,29 +15,44 @@
    <section>
     <form>
      <fieldset>
-      <label for="bill">Bill</label>
-      <input required type="number" id="bill" name="bill" />
+      <label for="bill"><b>Bill</b></label>
+      <input required type="number" id="bill" name="bill" placeholder="0" />
      </fieldset>
 
      <fieldset>
-      <legend>Select tip % (Required)</legend>
-      <label for="5">5%</label
-      ><input id="5" name="5" type="radio" value="0.05" />
-      <label for="10">10%</label
-      ><input id="10" name="10" type="radio" value="0.1" />
-      <label for="15">15%</label
-      ><input id="15" name="15" type="radio" value="0.15" />
-      <label for="20">20%</label
-      ><input id="20" name="20" type="radio" value="0.2" />
-      <label for="50">50%</label
-      ><input id="50" name="50" type="radio" value="0.5" />
-      <label for="custom">Custom</label
-      ><input id="custom" name="custom" type="radio" value="custom" />
+      <legend><b>Select tip % (Required)</b></legend>
+      <div class="tip-grid">
+       <span class="input-wrap"
+        >5%
+        <label for="5"> 5%</label>
+        <input id="5" name="5" type="radio" value="0.05" />
+       </span>
+       <span class="input-wrap"
+        >10% <label for="10">10%</label
+        ><input id="10" name="10" type="radio" value="0.1"
+       /></span>
+       <span class="input-wrap"
+        >15% <label for="15">15%</label
+        ><input id="15" name="15" type="radio" value="0.15"
+       /></span>
+       <span class="input-wrap"
+        >20% <label for="20">20%</label
+        ><input id="20" name="20" type="radio" value="0.2"
+       /></span>
+       <span class="input-wrap"
+        >50% <label for="50">50%</label
+        ><input id="50" name="50" type="radio" value="0.5"
+       /></span>
+       <span class="input-wrap"
+        >Custom <label for="custom">Custom</label
+        ><input id="custom" name="custom" type="radio" value="custom"
+       /></span>
+      </div>
      </fieldset>
 
      <fieldset>
-      <label for="people">Number of People</label>
-      <input type="number" id="people" name="people" />
+      <label for="people"><b>Number of People</b></label>
+      <input type="number" id="people" name="people" placeholder="0" />
      </fieldset>
     </form>
    </section>
