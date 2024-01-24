@@ -25,11 +25,11 @@
        <span class="input-wrap"
         >5%
         <label for="5"> 5%</label>
-        <input id="5" name="tip-option" type="radio" value="0.05" />
+        <input id="5" name="tip-option" type="radio" value="1.05" />
        </span>
        <span class="input-wrap"
         >10% <label for="10">10%</label
-        ><input id="10" name="tip-option" type="radio" value="0.1"
+        ><input id="10" name="tip-option" type="radio" value="1.1"
        /></span>
        <span class="input-wrap"
         >15% <label for="15">15%</label
@@ -37,11 +37,11 @@
        /></span>
        <span class="input-wrap"
         >20% <label for="20">20%</label
-        ><input id="20" name="tip-option" type="radio" value="0.2"
+        ><input id="20" name="tip-option" type="radio" value="1.2"
        /></span>
        <span class="input-wrap"
         >50% <label for="50">50%</label
-        ><input id="50" name="tip-option" type="radio" value="0.5"
+        ><input id="50" name="tip-option" type="radio" value="1.5"
        /></span>
        <span class="input-wrap"
         >Custom <label for="custom">Custom</label
@@ -62,14 +62,14 @@
       Tip Amount <br />
       <small>/ person</small></span
      >
-     <span class="amount">$0.00</span>
+     <span id="total-per-person" class="amount">$0.00</span>
     </p>
     <p>
      <span>
       Total Amount <br />
       <small>/ person</small></span
      >
-     <span class="amount">$0.00</span>
+     <span id="tip-per-person" class="amount">$0.00</span>
     </p>
     <button id="reset">RESET</button>
    </section>

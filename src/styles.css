@@ -68,10 +68,6 @@ input[type="number"] {
  width: 100%;
 }
 
-input[type="radio"] {
- appearance: none;
-}
-
 .input-wrap {
  background-color: #00474a;
  color: rgb(195, 255, 242);

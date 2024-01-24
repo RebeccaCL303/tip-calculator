@@ -1,54 +1,44 @@
 const billInput = document.getElementById("bill");
 const peopleInput = document.getElementById("people");
-const tipInputs = [
- {
-  label: "5%",
-  id: "1.05",
-  value: 1.05,
- },
- {
-  label: "10%",
-  id: "1.1",
-  value: 1.1,
- },
- {
-  label: "15%",
-  id: "1.15",
-  value: 1.15,
- },
- {
-  label: "20%",
-  id: "1.2",
-  value: 1.2,
- },
- {
-  label: "50%",
-  id: "1.5",
-  value: 1.5,
- },
- {
-  label: "Custom",
-  id: "custom",
-  value: "custom",
- },
-];
+const fivePercent = document.getElementById("5");
+const tenPercent = document.getElementById("10");
+const fifteenPercent = document.getElementById("15");
+const twentyPercent = document.getElementById("20");
+const fiftyPercent = document.getElementById("50");
+const customPercent = document.getElementById("custom");
 
-let billAmount;
-let tipAmount;
-let peopleAmount;
+const totalPerPerson = document.getElementById("total-per-person");
+const tipPerPerson = document.getElementById("tip-per-person");
+
+let data = {
+ bill: 0,
+ tip: 0,
+ people: 0,
+};
 
 const getBillAmount = () => {
- billAmount = billInput.value;
+ data.bill = billInput.value;
 };
 
 billInput.onchange = getBillAmount;
 billInput.oninput = getBillAmount;
 
 const getPeopleAmount = () => {
- peopleAmount = peopleInput.value;
+ data.people = peopleInput.value;
 };
 
 peopleInput.onchange = getPeopleAmount;
 peopleInput.oninput = getPeopleAmount;
 
-const getTipAmount = () => {};
+const getTipAmount = (event) => {
+ data.tip = event.target.value;
+};
+
+fivePercent.oninput = getTipAmount;
+tenPercent.oninput = getTipAmount;
+fifteenPercent.oninput = getTipAmount;
+twentyPercent.oninput = getTipAmount;
+fiftyPercent.oninput = getTipAmount;
+customPercent.oninput = getTipAmount;
+
+const calculate = () => {};
