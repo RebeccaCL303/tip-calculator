@@ -32,6 +32,7 @@ peopleInput.oninput = getPeopleAmount;
 
 const getTipAmount = (event) => {
  data.tip = event.target.value;
+ calculate();
 };
 
 fivePercent.oninput = getTipAmount;
@@ -41,4 +42,11 @@ twentyPercent.oninput = getTipAmount;
 fiftyPercent.oninput = getTipAmount;
 customPercent.oninput = getTipAmount;
 
-const calculate = () => {};
+const calculate = () => {
+ const totalBill = data.tip * data.bill;
+ const splitTotal = totalBill / data.people;
+ const splitTip = (totalBill - data.bill) / data.people;
+
+ totalPerPerson.innerHTML = `$${splitTotal}`;
+ tipPerPerson.innerHTML = `$${splitTip}`;
+};
