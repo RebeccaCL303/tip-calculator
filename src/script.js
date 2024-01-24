@@ -42,11 +42,15 @@ twentyPercent.oninput = getTipAmount;
 fiftyPercent.oninput = getTipAmount;
 customPercent.oninput = getTipAmount;
 
+const displayInfo = (tip, total) => {
+ tipPerPerson.innerHTML = `$${parseFloat(tip).toFixed(2)}`;
+ totalPerPerson.innerHTML = `$${parseFloat(total).toFixed(2)}`;
+};
+
 const calculate = () => {
  const totalBill = data.tip * data.bill;
  const splitTotal = totalBill / data.people;
  const splitTip = (totalBill - data.bill) / data.people;
 
- totalPerPerson.innerHTML = `$${splitTotal}`;
- tipPerPerson.innerHTML = `$${splitTip}`;
+ displayInfo(splitTip, splitTotal);
 };
