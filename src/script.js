@@ -31,16 +31,19 @@ peopleInput.onchange = getPeopleAmount;
 peopleInput.oninput = getPeopleAmount;
 
 const getTipAmount = (event) => {
- data.tip = event.target.value;
+ let tip = parseFloat(event.target.value.replace("%", ""));
+ tip = tip / 100 + 1;
+ data.tip = tip;
+
  calculate();
 };
 
-fivePercent.oninput = getTipAmount;
-tenPercent.oninput = getTipAmount;
-fifteenPercent.oninput = getTipAmount;
-twentyPercent.oninput = getTipAmount;
-fiftyPercent.oninput = getTipAmount;
-customPercent.oninput = getTipAmount;
+fivePercent.onclick = getTipAmount;
+tenPercent.onclick = getTipAmount;
+fifteenPercent.onclick = getTipAmount;
+twentyPercent.onclick = getTipAmount;
+fiftyPercent.onclick = getTipAmount;
+customPercent.onclick = getTipAmount;
 
 const displayInfo = (tip, total) => {
  tipPerPerson.innerHTML = `$${parseFloat(tip).toFixed(2)}`;
