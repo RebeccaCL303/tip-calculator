@@ -27,7 +27,7 @@ footer {
 /* main */
 
 main {
- aspect-ratio: 6 / 3;
+ aspect-ratio: 3 / 1;
  width: 60vw;
  background-color: whitesmoke;
  margin: 5rem auto;
@@ -48,9 +48,9 @@ section:first-of-type {
  width: 95%;
 }
 
-form {
- display: grid;
- grid-template-rows: 1fr 2fr 1fr;
+fieldset {
+ border: none;
+ align-content: center;
 }
 
 fieldset:nth-of-type(2) label {
@@ -71,6 +71,7 @@ input[type="number"] {
  border: none;
  border-radius: 8px;
  width: 100%;
+ font-size: 1.1rem;
 }
 
 input[name="tip-option"] {
@@ -81,6 +82,9 @@ input[name="tip-option"] {
  border-radius: 8px;
  border: none;
  font-weight: 600;
+ width: 30%;
+ padding: 0.5rem 0.75rem;
+ margin: 0.5rem auto;
 }
 
 input[name="tip-option"]:hover {
@@ -129,7 +133,7 @@ section:last-of-type .amount {
  margin: 45% auto 0;
  display: block;
  position: relative;
- bottom: -5%;
+ bottom: 5%;
 }
 
 #reset:hover {
