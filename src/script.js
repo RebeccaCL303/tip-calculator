@@ -11,13 +11,17 @@ const totalPerPerson = document.getElementById("total-per-person");
 const tipPerPerson = document.getElementById("tip-per-person");
 
 let data = {
- bill: 0,
- tip: 0,
- people: 0,
+ bill: null,
+ tip: null,
+ people: null,
 };
 
 const getBillAmount = () => {
  data.bill = billInput.value;
+
+ if (data.people !== null && data.tip !== null) {
+  calculate();
+ }
 };
 
 billInput.onchange = getBillAmount;
@@ -25,6 +29,10 @@ billInput.oninput = getBillAmount;
 
 const getPeopleAmount = () => {
  data.people = peopleInput.value;
+
+ if (data.bill !== null && data.tip !== null) {
+  calculate();
+ }
 };
 
 peopleInput.onchange = getPeopleAmount;
@@ -35,7 +43,9 @@ const getTipAmount = (event) => {
  tip = tip / 100 + 1;
  data.tip = tip;
 
- calculate();
+ if (data.people !== null && data.bill !== null) {
+  calculate();
+ }
 };
 
 fivePercent.onclick = getTipAmount;
