@@ -40,20 +40,39 @@ peopleInput.onchange = getPeopleAmount;
 peopleInput.oninput = getPeopleAmount;
 
 const getTipAmount = (event) => {
+ if (customPercent.classList.contains("custom-active")) {
+  customInstruction.classList.remove("display");
+  customInstruction.classList.add("hidden");
+  customPercent.classList.remove("custom-active");
+  customPercent.removeAttribute("min");
+  customPercent.setAttribute("type", "button");
+  customPercent.value = "Custom";
+ }
+
  let tip = parseFloat(event.target.value.replace("%", ""));
  tip = tip / 100 + 1;
  data.tip = tip;
+
+ if (data.people !== null && data.bill !== null) {
+  calculate();
+ }
 };
 
-if (data.people !== null && data.bill !== null) {
- calculate();
-}
-
-const getCustomTip = () => {
+const handleCustomTip = () => {
  customInstruction.classList.remove("hidden");
  customInstruction.classList.add("display");
+ customPercent.setAttribute("type", "number");
+ customPercent.setAttribute("min", 0);
+ customPercent.setAttribute("value", "");
  customPercent.classList.add("custom-active");
- customPercent.value = "";
+};
+
+const getCustomTip = (event) => {
+ data.tip = parseInt(event.target.value / 100 + 1);
+
+ if (data.people !== null && data.bill !== null) {
+  calculate();
+ }
 };
 
 fivePercent.onclick = getTipAmount;
@@ -61,7 +80,9 @@ tenPercent.onclick = getTipAmount;
 fifteenPercent.onclick = getTipAmount;
 twentyPercent.onclick = getTipAmount;
 fiftyPercent.onclick = getTipAmount;
-customPercent.onclick = getCustomTip;
+customPercent.onclick = handleCustomTip;
+customPercent.oninput = getCustomTip;
+customPercent.onchange = getCustomTip;
 
 const displayInfo = (tip, total) => {
  tipPerPerson.innerHTML = `$${parseFloat(tip).toFixed(2)}`;
