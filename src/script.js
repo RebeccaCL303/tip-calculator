@@ -6,6 +6,7 @@ const fifteenPercent = document.getElementById("15");
 const twentyPercent = document.getElementById("20");
 const fiftyPercent = document.getElementById("50");
 const customPercent = document.getElementById("custom");
+const customInstruction = document.getElementById("custom-instruction");
 
 const totalPerPerson = document.getElementById("total-per-person");
 const tipPerPerson = document.getElementById("tip-per-person");
@@ -42,10 +43,17 @@ const getTipAmount = (event) => {
  let tip = parseFloat(event.target.value.replace("%", ""));
  tip = tip / 100 + 1;
  data.tip = tip;
+};
 
- if (data.people !== null && data.bill !== null) {
-  calculate();
- }
+if (data.people !== null && data.bill !== null) {
+ calculate();
+}
+
+const getCustomTip = () => {
+ customInstruction.classList.remove("hidden");
+ customInstruction.classList.add("display");
+ customPercent.classList.add("custom-active");
+ customPercent.value = "";
 };
 
 fivePercent.onclick = getTipAmount;
@@ -53,7 +61,7 @@ tenPercent.onclick = getTipAmount;
 fifteenPercent.onclick = getTipAmount;
 twentyPercent.onclick = getTipAmount;
 fiftyPercent.onclick = getTipAmount;
-customPercent.onclick = getTipAmount;
+customPercent.onclick = getCustomTip;
 
 const displayInfo = (tip, total) => {
  tipPerPerson.innerHTML = `$${parseFloat(tip).toFixed(2)}`;

@@ -1,6 +1,7 @@
 :root {
  --light-accent: #27c2ae;
  --dark-accent: #00474a;
+ --input: #e2eafc;
 }
 
 * {
@@ -11,6 +12,14 @@ body {
  background-color: #c5e4e7;
  padding: 50px;
  font-family: monospace;
+}
+
+.hidden {
+ color: whitesmoke;
+}
+
+.display {
+ color: red;
 }
 
 /* header and footer */
@@ -66,7 +75,7 @@ fieldset:nth-of-type(2) label {
 }
 
 input[type="number"] {
- background-color: #e2eafc;
+ background-color: var(--input);
  padding: 0.5rem 0.3rem;
  border: none;
  border-radius: 8px;
@@ -74,7 +83,7 @@ input[type="number"] {
  font-size: 1.1rem;
 }
 
-input[name="tip-option"] {
+.tip {
  background-color: #00474a;
  color: rgb(195, 255, 242);
  text-align: center;
@@ -85,10 +94,26 @@ input[name="tip-option"] {
  width: 30%;
  padding: 0.5rem 0.75rem;
  margin: 0.5rem auto;
+ transition: 200ms all ease-in-out;
+}
+
+.custom-active {
+ background-color: var(--input);
+ border-color: black;
+ color: black;
+ text-align: left;
+ content: "";
+}
+
+#custom-instruction {
+ text-align: right;
+ font-size: 0.9rem;
 }
 
 input[name="tip-option"]:hover {
  cursor: pointer;
+ color: #00474a;
+ background-color: rgb(195, 255, 242);
 }
 
 /* second section */
