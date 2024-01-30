@@ -15,11 +15,12 @@ body {
 }
 
 .hidden {
- color: whitesmoke;
+ opacity: 0;
 }
 
 .display {
  color: red;
+ opacity: 1;
 }
 
 /* header and footer */
