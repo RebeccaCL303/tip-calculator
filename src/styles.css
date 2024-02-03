@@ -106,8 +106,6 @@ input[type="number"] {
  color: black;
  text-align: left;
  content: "";
- display: inline;
- width: 30%;
 }
 
 #custom-instruction {

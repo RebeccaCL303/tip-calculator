@@ -44,8 +44,6 @@ const getTipAmount = (event) => {
   customInstruction.classList.remove("display");
   customInstruction.classList.add("hidden");
   customPercent.classList.remove("custom-active");
-  customPercent.removeAttribute("min");
-  customPercent.setAttribute("type", "button");
   customPercent.value = "Custom";
  }
 
@@ -61,14 +59,13 @@ const getTipAmount = (event) => {
 const handleCustomTip = () => {
  customInstruction.classList.remove("hidden");
  customInstruction.classList.add("display");
- customPercent.setAttribute("type", "number");
- customPercent.setAttribute("min", 0);
  customPercent.setAttribute("value", "");
  customPercent.classList.add("custom-active");
 };
 
 const getCustomTip = (event) => {
- data.tip = parseInt(event.target.value / 100 + 1);
+ data.tip = parseFloat(event.target.value / 100 + 1);
+ console.log(parseFloat(event.target.value / 100 + 1));
 
  if (data.people !== null && data.bill !== null) {
   calculate();
