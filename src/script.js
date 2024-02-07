@@ -7,6 +7,7 @@ const twentyPercent = document.getElementById("20");
 const fiftyPercent = document.getElementById("50");
 const customPercent = document.getElementById("custom");
 const customInstruction = document.getElementById("custom-instruction");
+const sumbitBtn = document.getElementById("submit-btn");
 
 const totalPerPerson = document.getElementById("total-per-person");
 const tipPerPerson = document.getElementById("tip-per-person");
@@ -19,10 +20,6 @@ let data = {
 
 const getBillAmount = () => {
  data.bill = billInput.value;
-
- if (data.people !== null && data.tip !== null) {
-  calculate();
- }
 };
 
 billInput.onchange = getBillAmount;
@@ -30,10 +27,6 @@ billInput.oninput = getBillAmount;
 
 const getPeopleAmount = () => {
  data.people = peopleInput.value;
-
- if (data.bill !== null && data.tip !== null) {
-  calculate();
- }
 };
 
 peopleInput.onchange = getPeopleAmount;
@@ -50,10 +43,6 @@ const getTipAmount = (event) => {
  let tip = parseFloat(event.target.value.replace("%", ""));
  tip = tip / 100 + 1;
  data.tip = tip;
-
- if (data.people !== null && data.bill !== null) {
-  calculate();
- }
 };
 
 const handleCustomTip = () => {
@@ -66,10 +55,6 @@ const handleCustomTip = () => {
 const getCustomTip = (event) => {
  data.tip = parseFloat(event.target.value / 100 + 1);
  console.log(parseFloat(event.target.value / 100 + 1));
-
- if (data.people !== null && data.bill !== null) {
-  calculate();
- }
 };
 
 fivePercent.onclick = getTipAmount;
@@ -93,3 +78,5 @@ const calculate = () => {
 
  displayInfo(splitTip, splitTotal);
 };
+
+sumbitBtn.onclick = calculate;
