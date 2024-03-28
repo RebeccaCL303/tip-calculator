@@ -38,26 +38,22 @@ footer {
 
 main {
  aspect-ratio: 3 / 1;
- width: 60vw;
- background-color: whitesmoke;
  margin: 5rem auto;
- border-radius: 15px;
  display: grid;
- grid-auto-flow: column;
- grid-auto-columns: 1fr;
- grid-template-rows: 1fr;
+ grid-template-columns: 1fr 1fr;
 }
 
 section {
  margin: 5%;
- padding: 5px;
+ padding: 20px;
+ border-radius: 10px;
+ background-color: #e2eafc;
 }
 
 /* first section and form */
 
 section:first-of-type {
  font-size: 1.2rem;
- width: 95%;
 }
 
 fieldset {
@@ -90,7 +86,7 @@ input[type="number"] {
  background-color: #00474a;
  color: rgb(195, 255, 242);
  text-align: center;
- font-size: 1.4rem;
+ font-size: 1.3rem;
  border-radius: 8px;
  border: none;
  font-weight: 600;
@@ -122,7 +118,6 @@ input[name="tip-option"]:hover {
 /* second section */
 
 section:last-of-type {
- background-color: var(--dark-accent);
  border-radius: 8px;
  width: 85%;
 }
@@ -130,8 +125,6 @@ section:last-of-type {
 section:last-of-type p {
  display: flex;
  justify-content: space-between;
- margin: 10% auto;
- width: 80%;
  color: whitesmoke;
  font-size: 1.1rem;
  font-weight: 600;
